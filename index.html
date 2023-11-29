@@ -6,42 +6,76 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="styles/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap">
   
   <title>Frontend Mentor | Tip calculator app</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
     .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+    .attribution a { color: hsl(183, 100%, 15%); }
   </style>
 </head>
 
 <body>
+  <main id="container">
+    <img alt="splitter logo" id="logo" src="images/logo.svg">
+    <form id="wrapper">
+      <!-- Billing -->
+      <div id="bill-section">
+        <label class="heading" for="bill">Bill</label>
+        <input class="number-input" id="bill" type="number" min="1" required>
+      </div>
 
-  Bill
+      <div id="tip-section">
+        <label class="heading" for="tip">Select Tip %</label>
+        <div id="tip-wrapper">
+          <button><input class="radio" type="radio">5%</button>
+          <button><input class="radio" type="radio">10%</button>
+          <button><input class="radio" type="radio">15%</button>
+          <button><input class="radio" type="radio">25%</button>
+          <button><input class="radio" type="radio">50%</button>
+          <button><input class="radio" type="radio">Custom</button>
+        </div>
+      </div>
 
-  Select Tip %
-  5%
-  10%
-  15%
-  25%
-  50%
-  Custom
+      <div id="people-section">
+        <label class="heading" for="people">Number of People</label>
+        <input id="people" class="number-input" type="number" min="0" max="99" required>
+      </div>
 
-  Number of People
+      <!-- Calculator -->
+      <div id="calculator-section">
+        <div class="result-container">
+          <div class="result-wrapper">
+              <span class="heading calc-heading">Tip Amount</span>
+              <span class="sub-heading">/ person</span>
+          </div>
+          <span class="result">$0</span>
+        </div>  
+        
+        <div class="result-container">
+          <div class="result-wrapper">
+            <span class="heading calc-heading">Total</span>
+            <span class="sub-heading">/ person</span>
+          </div>
+          <span class="result">$0</span>
+        </div>
 
-  Tip Amount
-  / person
+        <button type="submit" id="reset-btn">RESET</button>
+      </div>
+    </form>
+  </main>
 
-  Total
-  / person
+  <footer>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Toané M.</a>
+    </div>
+  </footer>
 
-  Reset
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Toané M.</a>.
-  </div>
   <script src="script.js"></script>
 </body>
 </html>
