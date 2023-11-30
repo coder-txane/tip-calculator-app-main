@@ -7,6 +7,11 @@ $veryLightGreyishCyan: hsl(189, 41%, 97%);
 $white: hsl(0, 0%, 100%);
 $spaceMono: 'Space Mono', monospace;
 
+@mixin flexCol {
+    display: flex;
+    flex-direction: column;
+}
+
 :root {
     font-family: $spaceMono;
 }
@@ -23,8 +28,7 @@ body {
 }
 
 #container {
-    display: flex;
-    flex-direction: column;
+    @include flexCol();
     height: 100%;
     color: $veryDarkCyan;
     
@@ -46,13 +50,13 @@ body {
         }
         
         #bill-section {
-            display: flex;
-            flex-direction: column;
+            @include flexCol();
         }
         
         .number-input {
             background-color: $veryLightGreyishCyan;
             border: none;
+            border-radius: 6px;
             outline: none;
             padding: 10px 20px;
             font-family: $spaceMono;
@@ -60,6 +64,23 @@ body {
             color: $veryDarkCyan;
             font-size: 1.2rem;
             font-weight: bold;
+            position: relative;
+        }
+
+        .icon {
+            width: 12px;
+            position: absolute;
+            left: 40px;
+        }
+
+        #dollar-icon {
+            position: absolute;
+            top: 197px;
+        }
+
+        #people-icon {
+            position: absolute;
+            bottom: 143px;
         }
         
         input::-webkit-inner-spin-button {
@@ -121,8 +142,7 @@ body {
         }
 
         #people-section {
-            display: flex;
-            flex-direction: column;
+            @include flexCol();
         }
 
     }
@@ -139,8 +159,7 @@ body {
             justify-content: space-between;
 
             .result-wrapper {
-                display: flex;
-                flex-direction: column;
+                @include flexCol();
 
                 .calc-heading {
                     font-size: 0.8rem;
