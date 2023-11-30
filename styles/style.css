@@ -1,1 +1,149 @@
-/*# sourceMappingURL=style.css.map */
+:root {
+  font-family: "Space Mono", monospace;
+}
+
+html {
+  background-color: hsl(185, 41%, 84%);
+  height: 100vh;
+  width: 100vw;
+}
+
+body {
+  height: 100vh;
+  margin: auto;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  color: hsl(183, 100%, 15%);
+}
+#container #logo {
+  margin: 36px auto;
+}
+#container #wrapper {
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 20px 20px 0 0;
+  padding: 24px;
+}
+#container #wrapper .section {
+  margin-bottom: 1.5rem;
+}
+#container #wrapper .heading {
+  margin-bottom: 0.6rem;
+}
+#container #wrapper #bill-section {
+  display: flex;
+  flex-direction: column;
+}
+#container #wrapper .number-input {
+  background-color: hsl(189, 41%, 97%);
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  font-family: "Space Mono", monospace;
+  text-align: end;
+  color: hsl(183, 100%, 15%);
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+#container #wrapper input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+#container #wrapper button > input[type=radio] {
+  display: none;
+}
+#container #wrapper #tip-section #tip-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 15px;
+  margin-top: 0.6rem;
+}
+#container #wrapper #tip-section #tip-wrapper button {
+  border-radius: 6px;
+  background-color: hsl(183, 100%, 15%);
+  border: 2.5px solid hsl(183, 100%, 15%);
+  color: hsl(0, 0%, 100%);
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-family: "Space Mono", monospace;
+  transition: 0.1s;
+}
+#container #wrapper #tip-section #tip-wrapper button:hover {
+  background-color: hsl(185, 41%, 84%);
+  color: hsl(183, 100%, 15%);
+  border: 2.5px solid hsl(185, 41%, 84%);
+}
+#container #wrapper #tip-section #tip-wrapper button:focus {
+  background-color: hsl(172, 67%, 45%);
+  color: hsl(183, 100%, 15%);
+  border: 2.5px solid hsl(172, 67%, 45%);
+}
+#container #wrapper #tip-section #tip-wrapper #custom {
+  background-color: hsl(189, 41%, 97%);
+  color: hsl(183, 100%, 15%);
+  border: 2.5px solid hsl(189, 41%, 97%);
+}
+#container #wrapper #tip-section #tip-wrapper #custom:hover {
+  background-color: hsl(185, 41%, 84%);
+  border: 2.5px solid hsl(185, 41%, 84%);
+}
+#container #wrapper #tip-section #tip-wrapper #custom:focus {
+  border: 2.5px solid hsl(172, 67%, 45%);
+}
+#container #wrapper #people-section {
+  display: flex;
+  flex-direction: column;
+}
+#container #calculator-section {
+  background-color: hsl(183, 100%, 15%);
+  color: hsl(0, 0%, 100%);
+  padding: 20px;
+  border-radius: 10px;
+}
+#container #calculator-section .result-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+#container #calculator-section .result-container .result-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+#container #calculator-section .result-container .result-wrapper .calc-heading {
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+#container #calculator-section .result-container .result-wrapper .sub-heading {
+  color: hsl(184, 14%, 56%);
+  font-size: 0.7rem;
+}
+#container #calculator-section .result-container .result {
+  font-size: 2rem;
+  color: hsl(172, 67%, 45%);
+  font-weight: 600;
+}
+#container #calculator-section #reset-btn {
+  color: hsl(183, 100%, 15%);
+  background-color: hsl(172, 67%, 45%);
+  font-family: "Space Mono", monospace;
+  border: none;
+  border-radius: 6px;
+  width: 100%;
+  padding: 10px 0;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.1s;
+  margin-top: 1.4rem;
+}
+#container #calculator-section #reset-btn:hover {
+  background-color: hsl(185, 41%, 84%);
+}
+
+footer {
+  display: none;
+}/*# sourceMappingURL=style.css.map */

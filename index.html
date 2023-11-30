@@ -22,46 +22,46 @@
 <body>
   <main id="container">
     <img alt="splitter logo" id="logo" src="images/logo.svg">
-    <form id="wrapper">
+    <form id="wrapper" novalidate>
       <!-- Billing -->
-      <div id="bill-section">
+      <div class="section" id="bill-section">
         <label class="heading" for="bill">Bill</label>
-        <input class="number-input" id="bill" type="number" min="1" required>
+        <input class="number-input" id="bill" type="number" min="1" data-type="currency" required>
       </div>
 
-      <div id="tip-section">
+      <div class="section" id="tip-section">
         <label class="heading" for="tip">Select Tip %</label>
         <div id="tip-wrapper">
-          <button><input class="radio" type="radio">5%</button>
-          <button><input class="radio" type="radio">10%</button>
-          <button><input class="radio" type="radio">15%</button>
-          <button><input class="radio" type="radio">25%</button>
-          <button><input class="radio" type="radio">50%</button>
-          <button><input class="radio" type="radio">Custom</button>
+          <button type="button"><input class="radio" type="radio">5%</button>
+          <button type="button"><input class="radio" type="radio">10%</button>
+          <button type="button"><input class="radio" type="radio">15%</button>
+          <button type="button"><input class="radio" type="radio">25%</button>
+          <button type="button"><input class="radio" type="radio">50%</button>
+          <button type="button" id="custom"><input class="radio" type="radio">Custom</button>
         </div>
       </div>
 
-      <div id="people-section">
+      <div class="section" id="people-section">
         <label class="heading" for="people">Number of People</label>
-        <input id="people" class="number-input" type="number" min="0" max="99" required>
+        <input id="people" class="number-input" type="number" min="0" max="99" data-type="currency" required>
       </div>
 
       <!-- Calculator -->
       <div id="calculator-section">
         <div class="result-container">
           <div class="result-wrapper">
-              <span class="heading calc-heading">Tip Amount</span>
+              <span class="calc-heading">Tip Amount</span>
               <span class="sub-heading">/ person</span>
           </div>
-          <span class="result">$0</span>
+          <span class="result">$<span class="total-cost">0</span></span>
         </div>  
         
         <div class="result-container">
           <div class="result-wrapper">
-            <span class="heading calc-heading">Total</span>
+            <span class="calc-heading">Total</span>
             <span class="sub-heading">/ person</span>
           </div>
-          <span class="result">$0</span>
+          <span class="result"><span class="total-cost">$0</span></span>
         </div>
 
         <button type="submit" id="reset-btn">RESET</button>

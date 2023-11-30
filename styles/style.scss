@@ -1,0 +1,185 @@
+$strongCyan: hsl(172, 67%, 45%);
+$veryDarkCyan: hsl(183, 100%, 15%);
+$darkGreyishCyan: hsl(186, 14%, 43%);
+$greyishCyan: hsl(184, 14%, 56%);
+$lightGreyishCyan: hsl(185, 41%, 84%);
+$veryLightGreyishCyan: hsl(189, 41%, 97%);
+$white: hsl(0, 0%, 100%);
+$spaceMono: 'Space Mono', monospace;
+
+:root {
+    font-family: $spaceMono;
+}
+
+html {
+    background-color: $lightGreyishCyan;
+    height: 100vh;
+    width: 100vw;
+}
+
+body {
+    height: 100vh;
+    margin: auto;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    color: $veryDarkCyan;
+    
+    #logo {
+        margin: 36px auto;
+    }
+    
+    #wrapper {
+        background-color: $white;
+        border-radius: 20px 20px 0 0;
+        padding: 24px;
+        
+        .section {
+            margin-bottom: 1.5rem;
+        }
+
+        .heading {
+            margin-bottom: 0.6rem;
+        }
+        
+        #bill-section {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .number-input {
+            background-color: $veryLightGreyishCyan;
+            border: none;
+            outline: none;
+            padding: 10px 20px;
+            font-family: $spaceMono;
+            text-align: end;
+            color: $veryDarkCyan;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        
+        button > input[type=radio] {
+            display: none;
+        }
+        
+        #tip-section {
+            #tip-wrapper {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 1fr 1fr 1fr;
+                gap: 15px;
+                margin-top: 0.6rem;
+
+                button {
+                    border-radius: 6px;
+                    background-color: $veryDarkCyan;
+                    border: 2.5px solid $veryDarkCyan;
+                    color: $white;
+                    padding: 6px 10px;
+                    cursor: pointer;
+                    font-size: 1.5rem;
+                    font-family: $spaceMono;
+                    transition: 0.1s;
+    
+                    &:hover {
+                        background-color: $lightGreyishCyan;
+                        color: $veryDarkCyan;
+                        border: 2.5px solid $lightGreyishCyan;
+                    }
+                    
+                    &:focus {
+                        background-color: $strongCyan;
+                        color: $veryDarkCyan;
+                        border: 2.5px solid $strongCyan;
+                    }
+                }
+    
+                #custom {
+                    background-color: $veryLightGreyishCyan;
+                    color: $veryDarkCyan;
+                    border: 2.5px solid $veryLightGreyishCyan;
+                    
+                    &:hover {
+                        background-color: $lightGreyishCyan;
+                        border: 2.5px solid $lightGreyishCyan;
+                    }
+
+                    &:focus {
+                        border: 2.5px solid $strongCyan;
+                    }
+                }
+            }
+        }
+
+        #people-section {
+            display: flex;
+            flex-direction: column;
+        }
+
+    }
+
+    #calculator-section {
+        background-color: $veryDarkCyan;
+        color: $white;
+        padding: 20px;
+        border-radius: 10px;
+
+        .result-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            .result-wrapper {
+                display: flex;
+                flex-direction: column;
+
+                .calc-heading {
+                    font-size: 0.8rem;
+                    font-weight: 500;
+                }
+
+                .sub-heading {
+                    color: $greyishCyan;
+                    font-size: 0.7rem;
+                }
+            }
+
+            .result {
+                font-size: 2rem;
+                color: $strongCyan;
+                font-weight: 600;
+            }
+        }
+
+        #reset-btn {
+            color: $veryDarkCyan;
+            background-color: $strongCyan;
+            font-family: $spaceMono;
+            border: none;
+            border-radius: 6px;
+            width: 100%;
+            padding: 10px 0;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.1s;
+            margin-top: 1.4rem;
+
+            &:hover {
+                background-color: $lightGreyishCyan;
+            }
+        }
+    }
+}
+
+footer {
+    display: none;
+}
