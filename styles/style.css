@@ -6,6 +6,7 @@ html {
   background-color: hsl(185, 41%, 84%);
   height: 100vh;
   width: 100vw;
+  box-sizing: border-box;
 }
 
 body {
@@ -22,10 +23,18 @@ body {
 #container #logo {
   margin: 36px auto;
 }
+#container #container-contents {
+  display: flex;
+  flex-direction: column;
+}
 #container #wrapper {
   background-color: hsl(0, 0%, 100%);
   border-radius: 20px 20px 0 0;
   padding: 24px;
+  width: clamp(50%, 375px, 100%);
+  margin: auto;
+  position: relative;
+  box-sizing: border-box;
 }
 #container #wrapper .section {
   margin-bottom: 1.5rem;
@@ -57,11 +66,11 @@ body {
 }
 #container #wrapper #dollar-icon {
   position: absolute;
-  top: 197px;
+  top: 73px;
 }
 #container #wrapper #people-icon {
   position: absolute;
-  bottom: 143px;
+  bottom: 262px;
 }
 #container #wrapper input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -102,6 +111,7 @@ body {
   background-color: hsl(189, 41%, 97%);
   color: hsl(183, 100%, 15%);
   border: 2.5px solid hsl(189, 41%, 97%);
+  font-size: min(1.5rem, 5.8vw);
 }
 #container #wrapper #tip-section #tip-wrapper #custom:hover {
   background-color: hsl(185, 41%, 84%);
@@ -161,4 +171,80 @@ body {
 
 footer {
   display: none;
+}
+
+@media screen and (min-width: 900px) {
+  #container {
+    width: 60%;
+    margin: auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  #container #logo {
+    margin: 0 auto 36px;
+  }
+  #container #wrapper {
+    display: flex;
+    border-radius: 20px;
+    width: 100%;
+  }
+  #container #wrapper #first-container {
+    margin-top: 8px;
+  }
+  #container #wrapper #first-container #tip-wrapper {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  #container #wrapper #first-container #tip-wrapper #custom {
+    font-size: min(1.5rem, 1.8vw);
+  }
+  #container #wrapper #first-container #people-section {
+    margin-bottom: 0;
+  }
+  #container #wrapper #first-container .number-input {
+    padding: 6px 20px;
+  }
+  #container #wrapper #first-container, #container #wrapper #second-container {
+    width: 50%;
+    padding: 0px 17px;
+  }
+  #container #wrapper #first-container {
+    margin: 8px 0;
+  }
+  #container #wrapper #second-container {
+    padding-right: 0;
+  }
+  #container #wrapper #calculator-section {
+    height: 100%;
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 28px;
+  }
+  #container #wrapper #calculator-section #calculator-wrapper {
+    margin-top: 20px;
+  }
+  #container #wrapper #calculator-section .result-container {
+    margin-bottom: 30px;
+    align-items: center;
+  }
+  #container #wrapper #calculator-section .result-container .result {
+    font-size: 2.2rem;
+  }
+  #container #wrapper #calculator-section #reset-btn {
+    font-size: 1rem;
+  }
+  #container #wrapper .icon {
+    left: 60px;
+  }
+  #container #wrapper #dollar-icon {
+    top: 76px;
+  }
+  #container #wrapper #people-icon {
+    bottom: 38px;
+  }
 }/*# sourceMappingURL=style.css.map */

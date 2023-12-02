@@ -20,6 +20,7 @@ html {
     background-color: $lightGreyishCyan;
     height: 100vh;
     width: 100vw;
+    box-sizing: border-box;
 }
 
 body {
@@ -35,11 +36,19 @@ body {
     #logo {
         margin: 36px auto;
     }
+
+    #container-contents {
+        @include flexCol();
+    }
     
     #wrapper {
         background-color: $white;
         border-radius: 20px 20px 0 0;
         padding: 24px;
+        width: clamp(50%, 375px, 100%);
+        margin: auto;
+        position: relative;
+        box-sizing: border-box;
         
         .section {
             margin-bottom: 1.5rem;
@@ -75,12 +84,12 @@ body {
 
         #dollar-icon {
             position: absolute;
-            top: 197px;
+            top: 73px;
         }
 
         #people-icon {
             position: absolute;
-            bottom: 143px;
+            bottom: 262px;
         }
         
         input::-webkit-inner-spin-button {
@@ -128,6 +137,7 @@ body {
                     background-color: $veryLightGreyishCyan;
                     color: $veryDarkCyan;
                     border: 2.5px solid $veryLightGreyishCyan;
+                    font-size: min(1.5rem, 5.8vw);
                     
                     &:hover {
                         background-color: $lightGreyishCyan;
@@ -201,4 +211,97 @@ body {
 
 footer {
     display: none;
+}
+
+@media screen and (min-width: 900px) {
+    #container {
+        width: 60%;
+        margin: auto;
+        position: relative;
+        @include flexCol();
+        justify-content: center;
+
+        #logo {
+            margin: 0 auto 36px;
+        }
+
+        #wrapper {
+            display: flex;
+            border-radius: 20px;
+            width: 100%;
+
+            #first-container {
+                margin-top: 8px;
+                
+                #tip-wrapper {
+                    grid-template-columns: 1fr 1fr 1fr;
+                    grid-template-rows: 1fr 1fr;
+
+                    #custom {
+                        font-size: min(1.5rem, 1.8vw);
+                    }
+                }
+
+                #people-section {
+                    margin-bottom: 0;
+                }
+
+                .number-input {
+                    padding: 6px 20px;
+                }
+            }
+
+            #first-container, #second-container {
+                width: 50%;
+                padding: 0px 17px;
+            }
+
+            #first-container {
+                margin: 8px 0;
+            }
+
+            #second-container {
+                padding-right: 0;
+            }
+
+            #calculator-section {
+                height: 100%;
+                border-radius: 14px;
+                @include flexCol();
+                justify-content: space-between;
+                box-sizing: border-box;
+                padding: 28px;
+
+                #calculator-wrapper {
+                    margin-top: 20px;
+                }
+
+                .result-container {
+                    margin-bottom: 30px;
+                    align-items: center;
+
+                    .result {
+                        font-size: 2.2rem;
+                    }
+                }
+
+                #reset-btn {
+                    font-size: 1rem;
+                }
+            }
+
+            .icon {
+                left: 60px;
+            }
+
+            #dollar-icon {
+                top: 76px;
+            }
+
+            #people-icon {
+                bottom: 38px;
+            }
+        }
+    }
+
 }
