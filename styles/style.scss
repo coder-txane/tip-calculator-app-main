@@ -52,6 +52,16 @@ body {
         
         .section {
             margin-bottom: 1.5rem;
+
+            .error-message {
+                position: absolute;
+                color: rgb(237, 109, 109);
+                font-size: 0.9rem;
+                margin: 0;
+                right: 0px;
+                top: 3px;
+                visibility: hidden;
+            }
         }
 
         .heading {
@@ -60,6 +70,18 @@ body {
         
         #bill-section {
             @include flexCol();
+            position: relative;
+
+            #first-error {
+                bottom: 65px;
+                text-align: end;
+                //visibility: hidden;
+            }
+            
+            #dollar-icon {
+                position: absolute;
+                top: 51px;
+            }
         }
         
         .number-input {
@@ -76,29 +98,33 @@ body {
             position: relative;
         }
 
+        .number-input:valid {
+            border: 2px solid $strongCyan;
+        }
+
+        .number-input:invalid {
+            border: 2px solid rgb(237, 109, 109);
+        }
+
         .icon {
             width: 12px;
             position: absolute;
-            left: 40px;
+            left: 24px;
         }
 
-        #dollar-icon {
-            position: absolute;
-            top: 73px;
-        }
+        #people-section {
+            @include flexCol();
+            position: relative;
 
-        #people-icon {
-            position: absolute;
-            bottom: 262px;
+            #people-icon {
+                position: absolute;
+                bottom: 19px;
+            }
         }
         
         input::-webkit-inner-spin-button {
             -webkit-appearance: none;
             margin: 0;
-        }
-        
-        button > input[type=radio] {
-            display: none;
         }
         
         #tip-section {
@@ -109,15 +135,16 @@ body {
                 gap: 15px;
                 margin-top: 0.6rem;
 
-                button {
+                .button {
                     border-radius: 6px;
                     background-color: $veryDarkCyan;
                     border: 2.5px solid $veryDarkCyan;
                     color: $white;
                     padding: 6px 10px;
                     cursor: pointer;
-                    font-size: 1.5rem;
+                    font-size: min(6vw, 1.5rem);
                     font-family: $spaceMono;
+                    text-align: center;
                     transition: 0.1s;
     
                     &:hover {
@@ -132,27 +159,32 @@ body {
                         border: 2.5px solid $strongCyan;
                     }
                 }
+
+                input[type="radio"] {
+                    display: none; // Hide the default radio buttons
+                
+                    &:checked + .button {
+                        background-color: $strongCyan;
+                        color: $veryDarkCyan;
+                        border: 2.5px solid $strongCyan;
+                    }
+                }
     
                 #custom {
                     background-color: $veryLightGreyishCyan;
                     color: $veryDarkCyan;
                     border: 2.5px solid $veryLightGreyishCyan;
                     font-size: min(1.5rem, 5.8vw);
-                    
-                    &:hover {
-                        background-color: $lightGreyishCyan;
-                        border: 2.5px solid $lightGreyishCyan;
-                    }
 
-                    &:focus {
+                    &:checked + .button {
+                        background-color: $veryLightGreyishCyan;
+                        color: $veryDarkCyan;
+                        border: 2.5px solid $veryLightGreyishCyan;
+                        font-size: min(1.5rem, 5.8vw);
                         border: 2.5px solid $strongCyan;
                     }
                 }
             }
-        }
-
-        #people-section {
-            @include flexCol();
         }
 
     }
@@ -213,7 +245,7 @@ footer {
     display: none;
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 1040px) {
     #container {
         width: 60%;
         margin: auto;
@@ -231,33 +263,45 @@ footer {
             width: 100%;
 
             #first-container {
-                margin-top: 8px;
+                margin: 8px 0;
+
+                #dollar-icon {
+                    top: 47px;
+                }
+
+                #first-error {
+                    bottom: 55px;
+                }
                 
                 #tip-wrapper {
                     grid-template-columns: 1fr 1fr 1fr;
                     grid-template-rows: 1fr 1fr;
 
                     #custom {
-                        font-size: min(1.5rem, 1.8vw);
+                        font-size: min(6vw, 1.5rem);
                     }
                 }
 
                 #people-section {
                     margin-bottom: 0;
+
+                    #people-icon {
+                        bottom: 15px;
+                    }
                 }
 
                 .number-input {
                     padding: 6px 20px;
+                }
+
+                .icon {
+                    left: 20px;
                 }
             }
 
             #first-container, #second-container {
                 width: 50%;
                 padding: 0px 17px;
-            }
-
-            #first-container {
-                margin: 8px 0;
             }
 
             #second-container {
@@ -288,18 +332,6 @@ footer {
                 #reset-btn {
                     font-size: 1rem;
                 }
-            }
-
-            .icon {
-                left: 60px;
-            }
-
-            #dollar-icon {
-                top: 76px;
-            }
-
-            #people-icon {
-                bottom: 38px;
             }
         }
     }

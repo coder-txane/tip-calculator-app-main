@@ -39,12 +39,30 @@ body {
 #container #wrapper .section {
   margin-bottom: 1.5rem;
 }
+#container #wrapper .section .error-message {
+  position: absolute;
+  color: rgb(237, 109, 109);
+  font-size: 0.9rem;
+  margin: 0;
+  right: 0px;
+  top: 3px;
+  visibility: hidden;
+}
 #container #wrapper .heading {
   margin-bottom: 0.6rem;
 }
 #container #wrapper #bill-section {
   display: flex;
   flex-direction: column;
+  position: relative;
+}
+#container #wrapper #bill-section #first-error {
+  bottom: 65px;
+  text-align: end;
+}
+#container #wrapper #bill-section #dollar-icon {
+  position: absolute;
+  top: 51px;
 }
 #container #wrapper .number-input {
   background-color: hsl(189, 41%, 97%);
@@ -59,25 +77,29 @@ body {
   font-weight: bold;
   position: relative;
 }
+#container #wrapper .number-input:valid {
+  border: 2px solid hsl(172, 67%, 45%);
+}
+#container #wrapper .number-input:invalid {
+  border: 2px solid rgb(237, 109, 109);
+}
 #container #wrapper .icon {
   width: 12px;
   position: absolute;
-  left: 40px;
+  left: 24px;
 }
-#container #wrapper #dollar-icon {
-  position: absolute;
-  top: 73px;
+#container #wrapper #people-section {
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
-#container #wrapper #people-icon {
+#container #wrapper #people-section #people-icon {
   position: absolute;
-  bottom: 262px;
+  bottom: 19px;
 }
 #container #wrapper input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
-}
-#container #wrapper button > input[type=radio] {
-  display: none;
 }
 #container #wrapper #tip-section #tip-wrapper {
   display: grid;
@@ -86,23 +108,32 @@ body {
   gap: 15px;
   margin-top: 0.6rem;
 }
-#container #wrapper #tip-section #tip-wrapper button {
+#container #wrapper #tip-section #tip-wrapper .button {
   border-radius: 6px;
   background-color: hsl(183, 100%, 15%);
   border: 2.5px solid hsl(183, 100%, 15%);
   color: hsl(0, 0%, 100%);
   padding: 6px 10px;
   cursor: pointer;
-  font-size: 1.5rem;
+  font-size: min(6vw, 1.5rem);
   font-family: "Space Mono", monospace;
+  text-align: center;
   transition: 0.1s;
 }
-#container #wrapper #tip-section #tip-wrapper button:hover {
+#container #wrapper #tip-section #tip-wrapper .button:hover {
   background-color: hsl(185, 41%, 84%);
   color: hsl(183, 100%, 15%);
   border: 2.5px solid hsl(185, 41%, 84%);
 }
-#container #wrapper #tip-section #tip-wrapper button:focus {
+#container #wrapper #tip-section #tip-wrapper .button:focus {
+  background-color: hsl(172, 67%, 45%);
+  color: hsl(183, 100%, 15%);
+  border: 2.5px solid hsl(172, 67%, 45%);
+}
+#container #wrapper #tip-section #tip-wrapper input[type=radio] {
+  display: none;
+}
+#container #wrapper #tip-section #tip-wrapper input[type=radio]:checked + .button {
   background-color: hsl(172, 67%, 45%);
   color: hsl(183, 100%, 15%);
   border: 2.5px solid hsl(172, 67%, 45%);
@@ -113,16 +144,12 @@ body {
   border: 2.5px solid hsl(189, 41%, 97%);
   font-size: min(1.5rem, 5.8vw);
 }
-#container #wrapper #tip-section #tip-wrapper #custom:hover {
-  background-color: hsl(185, 41%, 84%);
-  border: 2.5px solid hsl(185, 41%, 84%);
-}
-#container #wrapper #tip-section #tip-wrapper #custom:focus {
+#container #wrapper #tip-section #tip-wrapper #custom:checked + .button {
+  background-color: hsl(189, 41%, 97%);
+  color: hsl(183, 100%, 15%);
+  border: 2.5px solid hsl(189, 41%, 97%);
+  font-size: min(1.5rem, 5.8vw);
   border: 2.5px solid hsl(172, 67%, 45%);
-}
-#container #wrapper #people-section {
-  display: flex;
-  flex-direction: column;
 }
 #container #calculator-section {
   background-color: hsl(183, 100%, 15%);
@@ -173,7 +200,7 @@ footer {
   display: none;
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 1040px) {
   #container {
     width: 60%;
     margin: auto;
@@ -191,27 +218,36 @@ footer {
     width: 100%;
   }
   #container #wrapper #first-container {
-    margin-top: 8px;
+    margin: 8px 0;
+  }
+  #container #wrapper #first-container #dollar-icon {
+    top: 47px;
+  }
+  #container #wrapper #first-container #first-error {
+    bottom: 55px;
   }
   #container #wrapper #first-container #tip-wrapper {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
   }
   #container #wrapper #first-container #tip-wrapper #custom {
-    font-size: min(1.5rem, 1.8vw);
+    font-size: min(6vw, 1.5rem);
   }
   #container #wrapper #first-container #people-section {
     margin-bottom: 0;
   }
+  #container #wrapper #first-container #people-section #people-icon {
+    bottom: 15px;
+  }
   #container #wrapper #first-container .number-input {
     padding: 6px 20px;
+  }
+  #container #wrapper #first-container .icon {
+    left: 20px;
   }
   #container #wrapper #first-container, #container #wrapper #second-container {
     width: 50%;
     padding: 0px 17px;
-  }
-  #container #wrapper #first-container {
-    margin: 8px 0;
   }
   #container #wrapper #second-container {
     padding-right: 0;
@@ -237,14 +273,5 @@ footer {
   }
   #container #wrapper #calculator-section #reset-btn {
     font-size: 1rem;
-  }
-  #container #wrapper .icon {
-    left: 60px;
-  }
-  #container #wrapper #dollar-icon {
-    top: 76px;
-  }
-  #container #wrapper #people-icon {
-    bottom: 38px;
   }
 }/*# sourceMappingURL=style.css.map */

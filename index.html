@@ -28,25 +28,38 @@
         <div id="first-container">
           <div class="section" id="bill-section">
             <label class="heading" for="bill">Bill</label>
+            <p class="error-message" id="first-error">Can't be zero</p>
             <input class="number-input" id="bill" type="number" min="1" data-type="currency" required>
             <img class="icon" id="dollar-icon" src="images/icon-dollar.svg">
           </div>
 
           <div class="section" id="tip-section">
-            <label class="heading" for="tip">Select Tip %</label>
+            <span class="heading">Select Tip %</span>
             <div id="tip-wrapper">
-              <button type="button"><input class="radio" type="radio">5%</button>
-              <button type="button"><input class="radio" type="radio">10%</button>
-              <button type="button"><input class="radio" type="radio">15%</button>
-              <button type="button"><input class="radio" type="radio">25%</button>
-              <button type="button"><input class="radio" type="radio">50%</button>
-              <button type="button" id="custom"><input class="radio" type="radio">Custom</button>
+              <input id="radio-1" class="radio" name="radio-btn" type="radio">
+              <label class="button" for="radio-1">5%</label>
+
+              <input id="radio-2" class="radio" name="radio-btn" type="radio">
+              <label class="button" for="radio-2">10%</label>
+
+              <input id="radio-3" class="radio" name="radio-btn" type="radio">
+              <label class="button" for="radio-3">15%</label>
+
+              <input id="radio-4" class="radio" name="radio-btn" type="radio">
+              <label class="button" for="radio-4">25%</label>
+
+              <input id="radio-5" class="radio" name="radio-btn" type="radio">
+              <label class="button" for="radio-5">50%</label>
+
+              <input id="custom" class="radio" name="radio-btn" type="radio">
+              <label class="button" for="custom">Custom</label>
             </div>
           </div>
 
           <div class="section" id="people-section">
             <label class="heading" for="people">Number of People</label>
-            <input id="people" class="number-input" type="number" min="0" max="99" data-type="currency" required>
+            <input id="people" class="number-input" type="number" min="1" max="99" data-type="currency" required>
+            <p class="error-message" id="second-error">Can't be zero</p>
             <img class="icon" id="people-icon" src="images/icon-person.svg">
           </div>
         </div>
