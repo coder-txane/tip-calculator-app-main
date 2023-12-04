@@ -29,36 +29,36 @@
           <div class="section" id="bill-section">
             <label class="heading" for="bill">Bill</label>
             <p class="error-message" id="first-error">Can't be zero</p>
-            <input class="number-input" id="bill" type="number" min="1" data-type="currency" required>
+            <input class="number-input" id="bill" type="number" min="1" step=".01" data-type="currency" placeholder="0" required>
             <img class="icon" id="dollar-icon" src="images/icon-dollar.svg">
           </div>
 
           <div class="section" id="tip-section">
             <span class="heading">Select Tip %</span>
             <div id="tip-wrapper">
-              <input id="radio-1" class="radio" name="radio-btn" type="radio">
+              <input id="radio-1" class="radio" name="radio-btn" type="radio" value="5%">
               <label class="button" for="radio-1">5%</label>
 
-              <input id="radio-2" class="radio" name="radio-btn" type="radio">
+              <input id="radio-2" class="radio" name="radio-btn" type="radio" value="10%">
               <label class="button" for="radio-2">10%</label>
 
-              <input id="radio-3" class="radio" name="radio-btn" type="radio">
+              <input id="radio-3" class="radio" name="radio-btn" type="radio" value="15%">
               <label class="button" for="radio-3">15%</label>
 
-              <input id="radio-4" class="radio" name="radio-btn" type="radio">
+              <input id="radio-4" class="radio" name="radio-btn" type="radio" value="25%">
               <label class="button" for="radio-4">25%</label>
 
-              <input id="radio-5" class="radio" name="radio-btn" type="radio">
+              <input id="radio-5" class="radio" name="radio-btn" type="radio" value="50%">
               <label class="button" for="radio-5">50%</label>
 
-              <input id="custom" class="radio" name="radio-btn" type="radio">
+              <input id="custom" class="radio" name="radio-btn" type="radio" value="">
               <label class="button" for="custom">Custom</label>
             </div>
           </div>
 
           <div class="section" id="people-section">
             <label class="heading" for="people">Number of People</label>
-            <input id="people" class="number-input" type="number" min="1" max="99" data-type="currency" required>
+            <input id="people" class="number-input" type="number" min="1" data-type="currency" placeholder="0" required>
             <p class="error-message" id="second-error">Can't be zero</p>
             <img class="icon" id="people-icon" src="images/icon-person.svg">
           </div>
@@ -73,7 +73,7 @@
                     <span class="calc-heading">Tip Amount</span>
                     <span class="sub-heading">/ person</span>
                 </div>
-                <span class="result">$<span class="total-cost">0</span></span>
+                <span class="result">$<span id="tip-amount">0</span></span>
               </div>  
               
               <div class="result-container">
@@ -81,11 +81,11 @@
                   <span class="calc-heading">Total</span>
                   <span class="sub-heading">/ person</span>
                 </div>
-                <span class="result"><span class="total-cost">$0</span></span>
+                <span class="result">$<span id="total-cost">0</span></span>
               </div>
             </div>
 
-            <button type="submit" id="reset-btn">RESET</button>
+            <button type="submit" id="reset-btn" disabled>RESET</button>
           </div>
         </div>
       </form>

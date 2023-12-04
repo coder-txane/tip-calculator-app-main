@@ -1,3 +1,4 @@
+// Variables
 $strongCyan: hsl(172, 67%, 45%);
 $veryDarkCyan: hsl(183, 100%, 15%);
 $darkGreyishCyan: hsl(186, 14%, 43%);
@@ -15,6 +16,8 @@ $spaceMono: 'Space Mono', monospace;
 :root {
     font-family: $spaceMono;
 }
+
+// Mobile screen
 
 html {
     background-color: $lightGreyishCyan;
@@ -60,7 +63,7 @@ body {
                 margin: 0;
                 right: 0px;
                 top: 3px;
-                visibility: hidden;
+                //visibility: hidden;
             }
         }
 
@@ -75,7 +78,7 @@ body {
             #first-error {
                 bottom: 65px;
                 text-align: end;
-                //visibility: hidden;
+                visibility: hidden;
             }
             
             #dollar-icon {
@@ -98,12 +101,17 @@ body {
             position: relative;
         }
 
+        .number-input::placeholder {
+            color: $greyishCyan;
+            opacity: 0.6;
+        }
+
         .number-input:valid {
             border: 2px solid $strongCyan;
         }
 
         .number-input:invalid {
-            border: 2px solid rgb(237, 109, 109);
+            border: none;
         }
 
         .icon {
@@ -119,6 +127,10 @@ body {
             #people-icon {
                 position: absolute;
                 bottom: 19px;
+            }
+
+            #second-error {
+                visibility: hidden;
             }
         }
         
@@ -233,9 +245,15 @@ body {
             cursor: pointer;
             transition: 0.1s;
             margin-top: 1.4rem;
+            opacity: 1;
 
             &:hover {
                 background-color: $lightGreyishCyan;
+            }
+
+            &:disabled {
+                cursor: not-allowed;
+                opacity: 0.3;
             }
         }
     }
@@ -244,6 +262,8 @@ body {
 footer {
     display: none;
 }
+
+// Desktop screen
 
 @media screen and (min-width: 1040px) {
     #container {
@@ -254,7 +274,8 @@ footer {
         justify-content: center;
 
         #logo {
-            margin: 0 auto 36px;
+            margin: 0 auto 60px;
+            width: 70px;
         }
 
         #wrapper {

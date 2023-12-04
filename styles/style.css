@@ -46,7 +46,6 @@ body {
   margin: 0;
   right: 0px;
   top: 3px;
-  visibility: hidden;
 }
 #container #wrapper .heading {
   margin-bottom: 0.6rem;
@@ -59,6 +58,7 @@ body {
 #container #wrapper #bill-section #first-error {
   bottom: 65px;
   text-align: end;
+  visibility: hidden;
 }
 #container #wrapper #bill-section #dollar-icon {
   position: absolute;
@@ -77,11 +77,19 @@ body {
   font-weight: bold;
   position: relative;
 }
+#container #wrapper .number-input::-moz-placeholder {
+  color: hsl(184, 14%, 56%);
+  opacity: 0.6;
+}
+#container #wrapper .number-input::placeholder {
+  color: hsl(184, 14%, 56%);
+  opacity: 0.6;
+}
 #container #wrapper .number-input:valid {
   border: 2px solid hsl(172, 67%, 45%);
 }
 #container #wrapper .number-input:invalid {
-  border: 2px solid rgb(237, 109, 109);
+  border: none;
 }
 #container #wrapper .icon {
   width: 12px;
@@ -96,6 +104,9 @@ body {
 #container #wrapper #people-section #people-icon {
   position: absolute;
   bottom: 19px;
+}
+#container #wrapper #people-section #second-error {
+  visibility: hidden;
 }
 #container #wrapper input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -191,9 +202,14 @@ body {
   cursor: pointer;
   transition: 0.1s;
   margin-top: 1.4rem;
+  opacity: 1;
 }
 #container #calculator-section #reset-btn:hover {
   background-color: hsl(185, 41%, 84%);
+}
+#container #calculator-section #reset-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.3;
 }
 
 footer {
@@ -210,7 +226,8 @@ footer {
     justify-content: center;
   }
   #container #logo {
-    margin: 0 auto 36px;
+    margin: 0 auto 60px;
+    width: 70px;
   }
   #container #wrapper {
     display: flex;
