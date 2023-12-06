@@ -154,6 +154,22 @@ body {
   color: hsl(183, 100%, 15%);
   border: 2.5px solid hsl(189, 41%, 97%);
   font-size: min(1.5rem, 5.8vw);
+  font-family: "Space Mono", monospace;
+  text-align: end;
+  outline: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+#container #wrapper #tip-section #tip-wrapper #custom::-moz-placeholder {
+  text-align: center;
+  color: hsl(183, 100%, 15%);
+}
+#container #wrapper #tip-section #tip-wrapper #custom::placeholder {
+  text-align: center;
+  color: hsl(183, 100%, 15%);
+}
+#container #wrapper #tip-section #tip-wrapper #custom:invalid {
+  border: 2px solid rgb(237, 109, 109);
 }
 #container #wrapper #tip-section #tip-wrapper #custom:checked + .button {
   background-color: hsl(189, 41%, 97%);
@@ -161,6 +177,9 @@ body {
   border: 2.5px solid hsl(189, 41%, 97%);
   font-size: min(1.5rem, 5.8vw);
   border: 2.5px solid hsl(172, 67%, 45%);
+}
+#container #wrapper #tip-section #tip-wrapper #custom-label {
+  display: none;
 }
 #container #calculator-section {
   background-color: hsl(183, 100%, 15%);
@@ -248,7 +267,7 @@ footer {
     grid-template-rows: 1fr 1fr;
   }
   #container #wrapper #first-container #tip-wrapper #custom {
-    font-size: min(6vw, 1.5rem);
+    font-size: min(1.5vw, 1.5rem);
   }
   #container #wrapper #first-container #people-section {
     margin-bottom: 0;

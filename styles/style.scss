@@ -187,7 +187,22 @@ body {
                     color: $veryDarkCyan;
                     border: 2.5px solid $veryLightGreyishCyan;
                     font-size: min(1.5rem, 5.8vw);
+                    font-family: $spaceMono;
+                    text-align: end;
+                    outline: none;
+                    border-radius: 6px;
+                    cursor: pointer;
+                    //display: none;
 
+                    &::placeholder {
+                        text-align: center;
+                        color: $veryDarkCyan;
+                    }
+
+                    &:invalid {
+                        border: 2px solid rgb(237, 109, 109);
+                    }
+                
                     &:checked + .button {
                         background-color: $veryLightGreyishCyan;
                         color: $veryDarkCyan;
@@ -195,6 +210,11 @@ body {
                         font-size: min(1.5rem, 5.8vw);
                         border: 2.5px solid $strongCyan;
                     }
+                    
+                }
+
+                #custom-label {
+                    display: none;
                 }
             }
         }
@@ -299,7 +319,7 @@ footer {
                     grid-template-rows: 1fr 1fr;
 
                     #custom {
-                        font-size: min(6vw, 1.5rem);
+                        font-size: min(1.5vw, 1.5rem);
                     }
                 }
 
